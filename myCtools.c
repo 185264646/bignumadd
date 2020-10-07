@@ -40,7 +40,8 @@ void panicf(const char *fmt, ...)
 {
 	va_list args;
 	va_start(args, fmt);
-	vprintf(fmt, args);
+	vfprintf(stderr, fmt, args);
+	fflush(stdout);
 	va_end(args);
 	exit(1);
 }
