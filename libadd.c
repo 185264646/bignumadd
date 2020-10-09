@@ -5,6 +5,7 @@
 #include<string.h>
 #include<ctype.h>
 #include<stdlib.h>
+#define ERR_INPUT "A non-digit charactor is found in the parameters."
 	_Bool carry_flag;
 static char add_byte(char, char);
 static char numtochar(char);
@@ -16,13 +17,13 @@ void check_argv(char *argv[])
 	for (i = 0; i < len; i++)
 	{
 		if (!isdigit(argv[1][i]))
-			panic("A non-digit charactor is found in the parameters");
+			panic(ERR_INPUT);
 	}
 	len = strlen(argv[2]);
 	for (i = 0; i < len; i++)
 	{
 		if (!isdigit(argv[2][i]))
-			panic("A non-digit charactor is found in the parameters");
+			panic(ERR_INPUT);
 	}
 	return;
 }
